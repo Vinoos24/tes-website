@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-laptop-code fa-2xl"></i>
+
+                        </span>
+                        <span class="title">Kelompok 5</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beranda.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-house fa-xl"></i>
+                        </span>
+                        <span class="title">Beranda</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="list aset.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-computer fa-xl"></i>
+                        </span>
+                        <span class="title">List Aset</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Laporan peminjaman.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-users fa-xl"></i>
+                        </span>
+                        <span class="title">Laporan Peminjam & Aset</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Laporan tahunan.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-ranking-star fa-xl"></i>
+                        </span>
+                        <span class="title">Laporan Tahunan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="feedback & evaluasi.html">
+                        <span class="icon">
+                            <i class="fa-sharp fa-solid fa-comment-dots fa-xl"></i>
+                        </span>
+                        <span class="title">Feedback & Evaluasi</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Bantuan.html">
+                        <span class="icon">
+                            <i class="fa-regular fa-circle-question fa-2xl"></i>
+                        </span>
+                        <span class="title">Bantuan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                        </span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" id="searchBox" placeholder="Search here">
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/imgs/logo poltek.jpeg" alt="">
+                </div>
+            </div>
+            
+            <div class="page-header">
+                <h1 align="center">Beranda</h1>
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Pengunjung</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Barang</div>
+                    </div>
+                    <div class="iconBx">
+                        <i class="fa-solid fa-computer"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Komentar</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">Rp.500.000</div>
+                        <div class="cardName">Pendapatan</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header untuk halaman List Barang -->
+
+            <!-- ======================= Cards ================== -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Riwayat Anggota</h2>
+                        <button class="btn" onclick="openForm()">Tambah Anggota</button>
+                    </div>
+                    <table id="adminTable">
+                        <thead>
+                            <tr>
+                                <td>Nama</td>
+                                <td>Jabatan</td>
+                                <td>Tugas</td>
+                                <td>Tanggal Bergabung</td>
+                                <td>Status</td>
+                                <td>Aksi</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data Admin akan diisi dengan JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="adminForm" class="formContainer">
+                    <h3 id="formTitle">Tambah Anggota</h3>
+                    <form id="adminDataForm">
+                        <input type="hidden" id="adminIndex">
+                        <label for="adminName">Nama:</label>
+                        <input type="text" id="adminName" required>
+                        <label for="adminPosition">Jabatan:</label>
+                        <input type="text" id="adminPosition" required>
+                        <label for="adminTask">Tugas:</label>
+                        <input type="text" id="adminTask" required>
+                        <label for="adminJoinDate">Tanggal Bergabung:</label>
+                        <input type="date" id="adminJoinDate" required>
+                        <label for="adminStatus">Status:</label>
+                        <select id="adminStatus" required>
+                            <option value="Aktif">Aktif</option>
+                            <option value="Cuti">Cuti</option>
+                        </select>
+                        <button type="submit" id="saveButton">Simpan</button>
+                        <button type="button" onclick="closeForm()">Batal</button>
+                    </form>
+                    <div class="info-box">
+                        <h2>Informasi Tambahan</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quisquam. Exercitationem voluptatum, reiciendis earum, magni consequatur, labore impedit iure temporibus at quo sed dolorem molestias dolore? Consequuntur, nihil beatae. Officia, aperiam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- js pencarian -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchBox = document.getElementById('searchBox');
+            const tables = document.querySelectorAll('.details .recentOrders table');
+
+            searchBox.addEventListener('input', function () {
+                const query = searchBox.value.toLowerCase();
+
+                tables.forEach(table => {
+                    const rows = table.querySelectorAll('tbody tr');
+                    let hasVisibleRows = false;
+
+                    rows.forEach(row => {
+                        const cells = row.getElementsByTagName('td');
+                        let found = false;
+
+                        // Clear previous highlights
+                        row.classList.remove('highlight');
+
+                        for (let i = 0; i < cells.length; i++) {
+                            if (cells[i].innerText.toLowerCase().includes(query)) {
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        if (found) {
+                            row.style.display = '';
+                            row.classList.add('highlight'); // Highlight found row
+                            hasVisibleRows = true;
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+
+                    if (!hasVisibleRows) {
+                        table.insertAdjacentHTML('beforeend', '<tfoot><tr><td colspan="6">No results found</td></tr></tfoot>');
+                    } else {
+                        const footer = table.querySelector('tfoot');
+                        if (footer) {
+                            footer.remove();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

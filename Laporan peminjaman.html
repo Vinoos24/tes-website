@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Peminjaman</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/laporan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-laptop-code fa-2xl"></i>
+
+                        </span>
+                        <span class="title">Kelompok 5</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beranda.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-house fa-xl"></i>
+                        </span>
+                        <span class="title">Beranda</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="list aset.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-computer fa-xl"></i>
+                        </span>
+                        <span class="title">List Aset</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Laporan peminjaman.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-users fa-xl"></i>
+                        </span>
+                        <span class="title">Laporan Peminjam & Aset</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Laporan tahunan.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-ranking-star fa-xl"></i>
+                        </span>
+                        <span class="title">Laporan Tahunan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="feedback & evaluasi.html">
+                        <span class="icon">
+                            <i class="fa-sharp fa-solid fa-comment-dots fa-xl"></i>
+                        </span>
+                        <span class="title">Feedback & Evaluasi</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Bantuan.html">
+                        <span class="icon">
+                            <i class="fa-regular fa-circle-question fa-2xl"></i>
+                        </span>
+                        <span class="title">Bantuan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                        </span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/imgs/logo poltek.jpeg" alt="User Profile Picture">
+                </div>
+            </div>
+
+             <!-- Header untuk halaman List Barang -->
+    <div class="page-header">
+        <h1 align="center">Laporan Peminjaman</h1>
+    </div>
+
+            
+            <!-- batas untuk data di halaman  -->
+            <div class="container">
+                <!-- Form untuk menambahkan laporan -->
+                <div class="add-report-form">
+                    <h2>Tambah Laporan Peminjaman</h2>
+                    <form id="reportForm">
+                        <label for="userName">Nama Pengguna:</label>
+                        <input type="text" id="userName" required>
+        
+                        <label for="itemName">Nama Unit:</label>
+                        <input type="text" id="itemName" required>
+        
+                        <label for="quantityUsed">Jumlah Unit yang Digunakan:</label>
+                        <input type="number" id="quantityUsed" required>
+        
+                        <label for="borrowDate">Tanggal Peminjaman:</label>
+                        <input type="date" id="borrowDate" required>
+        
+                        <label for="returnDate">Tanggal Pengembalian:</label>
+                        <input type="date" id="returnDate" required>
+        
+                        <label for="conditionAtBorrow">Kondisi Saat Dipinjam:</label>
+                        <select id="conditionAtBorrow" required>
+                            <option value="">Pilih Kondisi</option>
+                            <option value="Baru">Baru</option>
+                            <option value="Bekas">Bekas</option>
+                            
+                        </select>
+        
+                        <label for="conditionAtReturn">Kondisi Saat Dikembalikan:</label>
+                        <select id="conditionAtReturn" required>
+                            <option value="">Pilih Kondisi</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Tidak Baik">Tidak Baik</option>
+                        </select>
+        
+                        <label for="compensationExplanation">Penjelasan Kompensasi:</label>
+                        <textarea id="compensationExplanation" rows="4" required></textarea>
+        
+                        <label for="compensationAmount">Nominal Kompensasi:</label>
+                        <input type="number" id="compensationAmount" required>
+        
+                        <button type="submit">Tambah Laporan</button>
+                    </form>
+                </div>
+        
+                <!-- Tabel untuk menampilkan laporan -->
+                <div class="report-data">
+                    <h2>Data Laporan Pengguna dan Aset</h2>
+                    <table id="reportTable">
+                        <thead>
+                            <tr>
+                                <th>Nama Pengguna</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah Barang yang Digunakan</th>
+                                <th>Tanggal Peminjaman</th>
+                                <th>Tanggal Pengembalian</th>
+                                <th>Kondisi Saat Dipinjam</th>
+                                <th>Kondisi Saat Dikembalikan</th>
+                                <th>Penjelasan Kompensasi</th>
+                                <th>Nominal Kompensasi</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data laporan akan muncul di sini -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- batasnya -->
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/laporan.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
