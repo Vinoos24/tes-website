@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Barang</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/list aset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-laptop-code fa-2xl"></i>
+
+                        </span>
+                        <span class="title">Kelompok 5</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="beranda.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-house fa-xl"></i>
+                        </span>
+                        <span class="title">Beranda</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="list aset.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-computer fa-xl"></i>
+                        </span>
+                        <span class="title">List Aset</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Laporan peminjaman.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-users fa-xl"></i>
+                        </span>
+                        <span class="title">Laporan Peminjam & Aset</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Laporan tahunan.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-ranking-star fa-xl"></i>
+                        </span>
+                        <span class="title">Laporan Tahunan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="feedback & evaluasi.html">
+                        <span class="icon">
+                            <i class="fa-sharp fa-solid fa-comment-dots fa-xl"></i>
+                        </span>
+                        <span class="title">Feedback & Evaluasi</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Bantuan.html">
+                        <span class="icon">
+                            <i class="fa-regular fa-circle-question fa-2xl"></i>
+                        </span>
+                        <span class="title">Bantuan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                        </span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
+    
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/imgs/logo poltek.jpeg" alt="">
+                </div>
+            </div>
+
+
+            <!-- Header untuk halaman List Barang -->
+    <div class="page-header">
+        <h1 align="center">List Barang</h1>
+    </div>
+            
+            <!-- batas untuk data di halaman  -->
+            <div class="add-asset-form">
+                <h2>Tambah Barang</h2>
+                <form id="itemForm">
+                    <label for="itemCode">Kode Barang:</label>
+                    <input type="text" id="itemCode" required>
+                
+                    <label for="itemName">Nama Barang:</label>
+                    <input type="text" id="itemName" required>
+                
+                    <label for="itemLocation">Lokasi Barang:</label>
+                    <input type="text" id="itemLocation" required>
+                
+                    <label for="itemQuantity">Jumlah Barang:</label>
+                    <input type="number" id="itemQuantity" required>
+                
+                    <label for="itemDate">Tanggal Masuk:</label>
+                    <input type="date" id="itemDate" required>
+                
+                    <label for="itemCondition">Kondisi Barang:</label>
+                    <select id="itemCondition" required>
+                        <option value="">Pilih Kondisi</option>
+                        <option value="Baru">Baru</option>
+                        <option value="Bekas">Bekas</option>
+                        <option value="Rusak">Rusak</option>
+                    </select>
+                
+                    <label for="itemSpec">Spesifikasi Barang:</label>
+                    <textarea id="itemSpec" rows="3" required></textarea>
+                
+                    <label for="itemMaintenance">Jadwal Pemeliharaan:</label>
+                    <input type="date" id="itemMaintenance">
+                
+                    <label for="itemAge">Usia Barang (tahun):</label>
+                    <input type="number" id="itemAge" min="0">
+                
+                    <label for="itemPhoto">Foto Barang:</label>
+                    <input type="file" id="itemPhoto" accept="image/*" required>
+                
+                    <button type="submit">Tambah Barang</button>
+                </form>
+            </div>
+        
+            <div class="data-barang">
+                <h2>Data Barang</h2>
+                <table id="itemTable">
+                    <thead>
+                        <tr>
+                            <th>Kode Barang</th>
+                            <th>Nama Barang</th>
+                            <th>Lokasi Barang</th>
+                            <th>Jumlah Barang</th>
+                            <th>Tanggal Masuk</th>
+                            <th>Kondisi Barang</th>
+                            <th>Spesifikasi Barang</th>
+                            <th>Jadwal Pemeliharaan</th>
+                            <th>Usia Barang</th>
+                            <th>Foto Barang</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data barang akan muncul di sini -->
+                    </tbody>
+                </table>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/list aset.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/backup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-laptop-code fa-2xl"></i>
+
+                        </span>
+                        <span class="title">Kelompok 5</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-house fa-xl"></i>
+                        </span>
+                        <span class="title">Beranda</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-computer fa-xl"></i>
+                        </span>
+                        <span class="title">List Aset</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-users fa-xl"></i>
+                        </span>
+                        <span class="title">Laporan Peminjam & Aset</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-ranking-star fa-xl"></i>
+                        </span>
+                        <span class="title">Laporan Tahunan</span>
+                    </a>
+                </li>
+
+
+
+                
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-sharp fa-solid fa-comment-dots fa-xl"></i>
+                        </span>
+                        <span class="title">Feedback & Evaluasi</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-folder-open fa-xl"></i>
+                        </span>
+                        <span class="title">Backup & Pemulihan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-regular fa-circle-question fa-2xl"></i>
+                        </span>
+                        <span class="title">Bantuan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                        </span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" id="searchBox" placeholder="Search here">
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="assets/imgs/logo-poltek.jpeg" alt="Logo">
+                </div>
+            </div>
+
+            <!-- Header untuk halaman List Barang -->
+            <div class="page-header">
+                <h1>Aset Hilang/Rusak</h1>
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <main>
+                <section id="record">
+                    <h2>Catat Aset Hilang/Rusak</h2>
+                    <form id="recordForm">
+                        <label for="itemCode">Kode Barang:</label>
+                        <input type="text" id="itemCode" required>
+
+                        <label for="itemName">Nama Barang:</label>
+                        <input type="text" id="itemName" required>
+
+                        <label for="itemSpecs">Spesifikasi Barang:</label>
+                        <textarea id="itemSpecs" rows="4" required></textarea>
+
+                        <label for="itemQuantity">Jumlah Barang yang Hilang/Rusak:</label>
+                        <input type="number" id="itemQuantity" required>
+
+                        <label for="lastSeenDate">Tanggal Terakhir Barang Diketahui:</label>
+                        <input type="date" id="lastSeenDate" required>
+
+                        <label for="itemCondition">Kondisi Barang:</label>
+                        <select id="itemCondition" required>
+                            <option value="hilang">Hilang</option>
+                            <option value="rusak">Rusak</option>
+                        </select>
+
+                        <label for="reporterName">Nama Pelapor:</label>
+                        <input type="text" id="reporterName" required>
+
+                        <label for="lastUserName">Nama Pengguna Terakhir:</label>
+                        <input type="text" id="lastUserName" required>
+
+                        <label for="actionTaken">Tindakan yang Dilakukan:</label>
+                        <textarea id="actionTaken" rows="4" required></textarea>
+
+                        <label for="estimatedCost">Estimasi Biaya Barang:</label>
+                        <input type="number" id="estimatedCost" step="0.01" required>
+
+                        <label for="reportNumber">Nomor Laporan:</label>
+                        <input type="text" id="reportNumber" required>
+
+                        <label for="itemImage">Foto Barang:</label>
+                        <input type="file" id="itemImage" accept="image/*">
+
+                        <button type="button" onclick="addRecord()">Tambah Catatan</button>
+                    </form>
+                </section>
+
+                <section id="history">
+                    <h2>Riwayat Aset Hilang/Rusak</h2>
+                    <table id="historyTable">
+                        <thead>
+                            <tr>
+                                <th>Kode Barang</th>
+                                <th>Nama Barang</th>
+                                <th>Spesifikasi Barang</th>
+                                <th>Jumlah Barang</th>
+                                <th>Tanggal Terakhir Diketahui</th>
+                                <th>Kondisi Barang</th>
+                                <th>Nama Pelapor</th>
+                                <th>Nama Pengguna Terakhir</th>
+                                <th>Tindakan</th>
+                                <th>Estimasi Biaya</th>
+                                <th>Nomor Laporan</th>
+                                <th>Foto Barang</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data akan ditambahkan melalui JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- ======= Scripts ====== -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
